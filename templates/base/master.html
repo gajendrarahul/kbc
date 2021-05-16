@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'css/css2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block 'title' %}<!-- title here-->{% endblock %}</title>
+</head>
+<body>
+    {% include 'components/header.html' %}
+    {% block 'content' %}
+    <!--this is content sector -->
+
+    {% endblock %}
+</body>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery-3.5.1.js' %}" ></script>
+<script type="text/javascript">
+$(function(){
+    var navbar = $('.header-inner');
+    $(window).scroll(function(){
+    if($(window).scrollTop() <=40){
+        navbar.removeClass('navbar-scroll');
+    }else{
+    navbar.addClass('navbar-scroll');
+        }
+    });
+    });
+</script>
+</html>

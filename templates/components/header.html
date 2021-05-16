@@ -1,0 +1,123 @@
+{% load static %}
+<!-- <header class="header">
+    <div class="header-inner">
+        <div class="container-fluid px-lg-5">
+            <nav class="navbar navbar-expand-lg my-navbar">
+                <a class="navbar-brand" href="#"><span class="logo">
+                        <img src="{% static 'img/logo5.png' %}" class="img-fluid" style="width:30px; margin:-3px 0px 0px 0px;">Vishweb
+                        design</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><i class="fas fa-bars" style="margin:5px 0px 0px 0px;"></i></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Products<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Downloads</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Enterprice</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Pricing
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Resources</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <button class="header-btn my-2 my-sm-0" type="submit">Subscribe free</button>
+                    </form>
+                </div>
+            </nav>
+
+        </div>
+    </div>
+</header> -->
+<header class="header">
+    <div class="header-inner">
+      <div class="container-fluid px-lg-5">
+        <nav class="navbar navbar-expand-lg my-navbar">
+    <a class="navbar-brand" href="#"><span class="logo">
+      <img src="{% static 'img/logo.jpg' %}" class="img-fluid" style="width:70px; margin: -3px; 0px 0px 0px;"></span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"><i class="fas fa-bars" style="margin:5px 0px 0px 0px;"></i></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav m-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Admission</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Update
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Notice</a>
+            <a class="dropdown-item" href="#">News</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Galary</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Facilities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+      </ul>
+      {% if user.is_authenticated %}
+      <a href="{% url 'signout' %}"><button class="header-btn my-2 my-sm-0">LogOut</button></a>
+      {% else %}
+      <a href="{% url 'signin' %}"><button class="header-btn my-2 my-sm-0">Login</button></a>
+      {% endif %}
+      <!-- <form class="form-inline my-2 my-lg-0">
+        <button class="header-btn my-2 my-sm-0"><a href="{% url 'signin' %}"></a> Login </a></button>
+      </form> -->
+    </div>
+  </nav>
+  
+      </div>
+    </div>
+  </header>
+  
+  <section class="content-banner">
+  
+    <div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-12">
+      <div class="banner-con text-center">
+        <p class="first-title">Kathmandu Bernhardt College</p>
+        <p class="banner-des">Bsc CSIT,BCA,BBA,BBS,MBS and many other programs</p>
+        <a href="https://www.youtube.com/results?search/query=vishweb+design" target="_blank" class="banner-btn">Learn More About us</a>
+      </div>
+  </div>
+  </div>
+  </div>
+  </section>
