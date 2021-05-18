@@ -3,62 +3,55 @@
 {% block 'content' %}
 <div class="container-fluid">
     <div class="row" style='background-color:azure'>
-        <div class="col-sm-4">
+        <div class="col-sm-6">
             <h3 class="text-center alert alert-info">
-                <button class="btn btn-primary" style="margin-right: 10px;">Add teacher</button>
-                <button class="btn btn-primary">Add student</button>
+                <a href="{% url 'adminteacher' %}">
+                    <button class="btn btn-primary" style="margin-right: 10px;">Teachers</button>
+                </a>
             </h3>
-            <form action="{% url 'teacherusersignup' %}" method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                <span>Name</span>
-                <input type="text" class="form-control" name="Tname" placeholder="Enter the name">
-                <span>Email</span>
-                <input type="email" class="form-control" name="email" placeholder="Enter the email">
-                <span>Subjects</span>
-                <input type="text" class="form-control" name="subject" placeholder="Enter the subject">
-                <span>Started Date</span>
-                <input type="date" class="form-control" name="sdate" placeholder="Enter the date started">
-                <span>End Date</span>
-                <input type="date" class="form-control" name="edate" placeholder="Enter the end date">
-                <span>Salary</span>
-                <input type="text" class="form-control" name="salary" placeholder="Enter the salary">
-                <span>Contact</span>
-                <input type="text" class="form-control" name="contact" placeholder="Enter the contact">
-                <span>Address</span>
-                <input type="text" class="form-control" name="address" placeholder="Enter the address">
-                <span>Password</span>
-                <input type="password" class="form-control" name="password1" placeholder="Enter the password">
-                <span>Confirm Password</span>
-                <input type="password" class="form-control" name="password2" placeholder="Confirm Password"><br>
-                <button type="submit" class="form-control btn btn-success">Save</button>
-            </form>
-        </div>
-        <div class="col-sm-8">
-            <h3 class="text-center alert alert-info">Teachers Details</h3>
             <table class="table">
-                <thead>
+                <thead></thead>
                     <tr>
+                        <th>Id</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Contact</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for t in teacher_details %}
                     <tr>
+                        <td>{{t.id}}</td>
                         <td>{{t.name}}</td>
                         <td>{{t.email}}</td>
-                        <td>{{t.contact}}</td>
-                        <td>
-                            <a href="#"><button class="btn btn-primary">Edit</button></a>
-                            |<a href="{% url 'delete' t.id %}"> <button class="btn btn-danger">Delete</button></a>
-                        </td> 
+                        <td>view</td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
-
+        </div>
+        <div class="col-sm-6">
+            <h3 class="text-center alert alert-info">
+                <button class="btn btn-primary">Students</button>
+            </h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Batch</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Rahul singh</td>
+                        <td>2073</td>
+                        <td>view</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

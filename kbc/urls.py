@@ -23,10 +23,12 @@ urlpatterns = [
     path('teacher/',include('teacher.urls')),
     path('student/',include('student.urls')),
     path('signin/', views.Signin, name='signin'),
-    path('admin-page/', views.AdminHomepage, name='adminhomepage'),
+    path('admin-page/', views.AdminHome, name='adminhomepage'),
+    path('adminteacher/',views.Adminteacher, name='adminteacher'),
     path('signup/', views.TeacherUserSignup, name='teacherusersignup'),
     path('signout/',views.Signout, name='signout'),
     path('delete/<int:id>/',views.Delete, name='delete'),
+    path('editteacher/<int:id>/',views.Editteacher, name='editteacher'),
 
 
 ]

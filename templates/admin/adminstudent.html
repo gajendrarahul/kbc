@@ -1,0 +1,63 @@
+{% extends 'base/master.html' %}
+{% block 'title' %}Admin {% endblock %}
+{% block 'content' %}
+<div class="container-fluid">
+    <div class="row" style='background-color:azure'>
+        <div class="col-sm-4">
+            <h3 class="text-center alert alert-info">Add Teacher</h3>
+            <form action="{% url 'teacherusersignup' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <span>Name</span>
+                <input type="text" class="form-control" name="Tname" placeholder="Enter the name">
+                <span>Email</span>
+                <input type="email" class="form-control" name="email" placeholder="Enter the email">
+                <span>Subjects</span>
+                <input type="text" class="form-control" name="subject" placeholder="Enter the subject">
+                <span>Started Date</span>
+                <input type="date" class="form-control" name="sdate" placeholder="Enter the date started">
+                <span>End Date</span>
+                <input type="date" class="form-control" name="edate" placeholder="Enter the end date">
+                <span>Salary</span>
+                <input type="text" class="form-control" name="salary" placeholder="Enter the salary">
+                <span>Contact</span>
+                <input type="text" class="form-control" name="contact" placeholder="Enter the contact">
+                <span>Address</span>
+                <input type="text" class="form-control" name="address" placeholder="Enter the address">
+                <span>Password</span>
+                <input type="password" class="form-control" name="password1" placeholder="Enter the password">
+                <span>Confirm Password</span>
+                <input type="password" class="form-control" name="password2" placeholder="Confirm Password"><br>
+                <button type="submit" class="form-control btn btn-success">Save</button>
+            </form>
+        </div>
+        <div class="col-sm-8">
+            <h3 class="text-center alert alert-info">Students Detail</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for t in teacher_details %}
+                    <tr>
+                        <td>{{t.name}}</td>
+                        <td>{{t.email}}</td>
+                        <td>{{t.contact}}</td>
+                        <td>
+                            <a href="#"><button class="btn btn-primary">Edit</button></a>
+                            |<a href="{% url 'delete' t.id %}"> <button class="btn btn-danger">Delete</button></a>
+                        </td> 
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
